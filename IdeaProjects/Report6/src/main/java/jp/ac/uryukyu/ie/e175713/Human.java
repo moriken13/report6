@@ -1,6 +1,7 @@
 package jp.ac.uryukyu.ie.e175713;
 
 public class Human {
+    
 
     private String name = null;
     private int hp = 0;

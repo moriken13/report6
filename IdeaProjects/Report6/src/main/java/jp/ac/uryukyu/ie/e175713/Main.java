@@ -5,6 +5,7 @@ public class Main {
         Hero hero = new Hero();
         Boss boss = new Boss();
 
+
         System.out.printf("%s vs. %s\n", hero.getName(), boss.getName());
 
         int turn = 0;

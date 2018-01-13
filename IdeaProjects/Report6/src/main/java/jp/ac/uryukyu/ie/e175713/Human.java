@@ -6,7 +6,8 @@ public class Human {
     private String name = null;
     private int hp = 0;
     private int attackPower = 0;
-    //private boolean death;
+    private boolean death ;
+
 
     public Human(){
     }
@@ -20,7 +21,7 @@ public class Human {
     public int getAttackPower(){ return attackPower; }
     public void setAttackPower(int attackPower){ this.attackPower = attackPower;}
 
-    //public boolean getDeath(){ return death;}
-    //public void setDeath(){ this.death = false;}
+    public boolean getDeath(){ return death;}
+    public void setDeath(boolean death){ this.death = death;}
 }
 

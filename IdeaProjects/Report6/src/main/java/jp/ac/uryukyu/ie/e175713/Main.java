@@ -19,13 +19,20 @@ public class Main {
             if(!boss.deathEvent()) {
                 womanHero.attack(boss);
             }
-            int select = (int)(Math.random()*2);
-            if( select == 0) {
-                boss.attack1(hero);
-            }else{
-                boss.attack2(womanHero);
+            int select = (int)(Math.random()*10);
+            if(!boss.deathEvent()) {
+                if (select < 5 && !hero.deathEvent()) {
+                    boss.attack1(hero);
+                } else if (select >= 5 && !womanHero.deathEvent()) {
+                    boss.attack2(womanHero);
+                } else {
+                    boss.recovery();
+                }
             }
 
+            System.out.printf("%sの残りのHPは%d|",hero.getName(),hero.getHp());
+            System.out.printf("%sの残りのHPは%d|",womanHero.getName(),womanHero.getHp());
+            System.out.printf("%sの残りのHPは%d|\n",boss.getName(),boss.getHp());
             System.out.println(" ");
         }
         System.out.println("戦闘終了");

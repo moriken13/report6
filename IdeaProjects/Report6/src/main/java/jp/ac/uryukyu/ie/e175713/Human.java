@@ -9,8 +9,7 @@ public class Human {
     private boolean death ;
 
 
-    public Human(){
-    }
+    //public Human(){}
 
     public String getName(){ return name; }
     public void setName(String name){ this.name = name; }
@@ -23,5 +22,23 @@ public class Human {
 
     public boolean getDeath(){ return death;}
     public void setDeath(boolean death){ this.death = death;}
+
+    public boolean deathEvent(){ return getDeath(); }
+
+    public void attack(Human enemy){
+        if(!getDeath()) {
+            int damage = (int) (Math.random() * getAttackPower());
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！\n", getName(), enemy.getName(), damage);
+            enemy.scar(damage);
+        }
+    }
+
+    public void scar(int damage){
+        setHp(getHp() - damage);
+        if( getHp() <= 0 ) {
+            setDeath(true);
+            System.out.printf("%sは力尽きてしまった。\n", getName());
+        }
+    }
 }
 

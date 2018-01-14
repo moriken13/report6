@@ -13,7 +13,9 @@ public class Main {
         while((!womanHero.deathEvent() || !hero.deathEvent()) && !boss.deathEvent()){
             turn++;
             System.out.printf("%dターン目！\n", turn);
-            hero.attack(boss);
+            if(!boss.deathEvent()) {
+                hero.attack(boss);
+            }
             if(!boss.deathEvent()) {
                 womanHero.attack(boss);
             }

@@ -35,6 +35,13 @@ public class Main {
             System.out.printf("%sの残りのHPは%d|\n",boss.getName(),boss.getHp());
             System.out.println(" ");
         }
+
         System.out.println("戦闘終了");
+
+        if(hero.deathEvent() && womanHero.deathEvent()){
+            System.out.printf("%sの勝利により、我々は、希望の光を失ってしまった・・・",boss.getName());
+        }else{
+            System.out.printf("Congratulations!!デスゲームはクリアされました！");
+        }
     }
 }

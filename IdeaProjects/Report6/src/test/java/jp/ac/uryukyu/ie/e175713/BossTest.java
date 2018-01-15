@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BossTest {
-
+    /**
+     * ボスが死亡状態の時はヒーローに攻撃できないことを確認するためのテスト
+     */
     @Test
     void attack1() {
         Hero hero = new Hero();
@@ -18,16 +20,19 @@ class BossTest {
         assertEquals(hero.getHp(), 10);
     }
 
+    /**
+     * ボスが死亡状態の時は女ヒーローに攻撃できないことを確認するためのテスト
+     */
     @Test
     void attack2() {
-        womanHero womanHero = new womanHero();
+        WomanHero WomanHero = new WomanHero();
         Boss boss = new Boss();
-        womanHero.setHp(10);
+        WomanHero.setHp(10);
         boss.setDeath(true);
         for(int i = 0; i<10; i++){
-            boss.attack2(womanHero);
+            boss.attack2(WomanHero);
         }
-        assertEquals(womanHero.getHp(), 10);
+        assertEquals(WomanHero.getHp(), 10);
     }
 
 }
